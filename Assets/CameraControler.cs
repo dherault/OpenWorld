@@ -56,9 +56,9 @@ public class CameraControler : MonoBehaviour
     }
 
     transform.position =new Vector3(
-      Math.Min(50, Math.Max(-50, transform.position.x)),
+      Math.Min(100, Math.Max(0, transform.position.x)),
       Math.Min(20, Math.Max(1, transform.position.y)),
-      Math.Min(50, Math.Max(-50, transform.position.z))
+      Math.Min(100, Math.Max(0, transform.position.z))
     );
   }
 
