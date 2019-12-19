@@ -6,63 +6,63 @@ using UnityEngine;
 public class CameraControler : MonoBehaviour
 {
 
-  private float mainSpeed = 25.0f;
-  private float orbitSensibility = 0.25f;
-  private float panSensibility = 0.1f;
-  private Vector3 mousePosition = new Vector3(0, 0, 0);
-  private Vector3 mousePositionDifference;
-  private Vector3 v;
+  private float moveSpeed = 0.5f;
+  private float scrollSpeed = 10f;
+  private float orbitSensibility = 0.23f;
+  private Vector3 previousMousePosition = new Vector3(0, 0, 0);
+  private double[,] rotationMatrix = new double[3, 3];
 
   void Start() {
     transform.position = new Vector3(0, 10, 0);
   }
 
   void Update () {
-    mousePositionDifference = Input.mousePosition - mousePosition;
-
     if (Input.GetMouseButton(1)) {
-      v = new Vector3(-mousePositionDifference.y * orbitSensibility, mousePositionDifference.x * orbitSensibility, 0);
-
-      transform.eulerAngles = new Vector3(transform.eulerAngles.x + v.x , transform.eulerAngles.y + v.y, 0);
+      previousMousePosition = Input.mousePosition - previousMousePosition ;
+      previousMousePosition = new Vector3(-previousMousePosition.y * orbitSensibility, previousMousePosition.x * orbitSensibility, 0 );
+      previousMousePosition = new Vector3(transform.eulerAngles.x + previousMousePosition.x , transform.eulerAngles.y + previousMousePosition.y, 0);
+      transform.eulerAngles = previousMousePosition;
     }
 
-    v = GetBaseInput();
+    previousMousePosition = Input.mousePosition;
 
-    if (Input.GetMouseButton(2)) {
-      v -= mousePositionDifference * panSensibility;
+
+
+    if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0) {
+      // InitializeRotationMatrix();
+
+      // rotationMatrix[1, 1] = 1;
+      // rotationMatrix[0, 0] = Math.Cos(transform.eulerAngles.y);
+      // rotationMatrix[0, 1] = Math.Sin(transform.eulerAngles.y);
+      // rotationMatrix[2, 0] = -Math.Sin(transform.eulerAngles.y);
+      // rotationMatrix[2, 1] = Math.Cos(transform.eulerAngles.y);
+
+      Vector3 velocity = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+
+      transform.position += moveSpeed * MultiplyVectorAndMatrix(velocity, rotationMatrix);
+      transform.position += moveSpeed * velocity;
     }
 
-    v *= mainSpeed * Time.deltaTime;
-    mousePosition = Input.mousePosition;
+    if (Input.GetAxis("Mouse ScrollWheel") != 0) {
+      transform.position += scrollSpeed * new Vector3(0, -Input.GetAxis("Mouse ScrollWheel"), 0);
+    }
 
-    transform.Translate(v);
-    transform.position = new Vector3(
-      Math.Max(-50, Math.Min(50, transform.position.x)),
-      Math.Max(3, Math.Min(20, transform.position.y)),
-      Math.Max(-50, Math.Min(50, transform.position.z))
-    );
   }
 
-  private Vector3 GetBaseInput() { //returns the basic values, if it's 0 than it's not active.
-    Vector3 speed = new Vector3();
-
-    if (Input.GetKey (KeyCode.W)) {
-      speed += new Vector3(0, 0 , 1);
+  void InitializeRotationMatrix() {
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+        rotationMatrix[i, j] = 0;
+      }
     }
+  }
 
-    if (Input.GetKey (KeyCode.S)) {
-      speed += new Vector3(0, 0, -1);
-    }
-
-    if (Input.GetKey (KeyCode.A)) {
-      speed += new Vector3(-1, 0, 0);
-    }
-
-    if (Input.GetKey (KeyCode.D)) {
-      speed += new Vector3(1, 0, 0);
-    }
-
-    return speed;
+  Vector3 MultiplyVectorAndMatrix(Vector3 v, double[,] m) {
+    return new Vector3(
+      v.x * (float)m[0, 0] + v.y * (float)m[1, 0] + v.z * (float)m[2, 0],
+      v.x * (float)m[0, 1] + v.y * (float)m[1, 1] + v.z * (float)m[2, 1],
+      v.x * (float)m[0, 2] + v.y * (float)m[1, 2] + v.z * (float)m[2, 2]
+    );
   }
 
 }
