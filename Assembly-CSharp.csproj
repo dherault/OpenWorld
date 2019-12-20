@@ -53,8 +53,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Boot.cs" />
      <Compile Include="Assets\CameraControler.cs" />
-     <Compile Include="Assets\CreateTerrain.cs" />
+     <Compile Include="Assets\CubeController.cs" />
+     <Compile Include="Assets\PlayerAvatarController.cs" />
+     <Compile Include="Assets\TerrainController.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/Users/sven/dev/OpenWorld/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

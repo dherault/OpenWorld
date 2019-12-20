@@ -6,16 +6,16 @@ using UnityEngine;
 public class CameraControler : MonoBehaviour
 {
 
-  private float moveSpeed = 1.5f;
+  private float moveSpeed = 0.5f;
   private float scrollSpeed = 10;
   private float orbitSensibility = 0.23f;
   private Vector3 previousMousePosition = new Vector3(0, 0, 0);
   private double[,] rotationMatrix = new double[3, 3];
   private float goalHeight = 10;
-  private float heightIncrement = 0.5f;
+  private float heightIncrement = 1;
 
   void Start() {
-    transform.position = new Vector3(0, goalHeight, 0);
+    transform.position = new Vector3(50, goalHeight, 50);
   }
 
   void Update () {
@@ -57,7 +57,7 @@ public class CameraControler : MonoBehaviour
 
     transform.position =new Vector3(
       Math.Min(100, Math.Max(0, transform.position.x)),
-      Math.Min(20, Math.Max(1, transform.position.y)),
+      Math.Min(40, Math.Max(1, transform.position.y)),
       Math.Min(100, Math.Max(0, transform.position.z))
     );
   }
