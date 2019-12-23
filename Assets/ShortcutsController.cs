@@ -5,12 +5,12 @@ using UnityEngine;
 public class ShortcutsController : MonoBehaviour {
 
   void Start() {
-    
+
   }
 
   void Update() {
-    if (Input.GetKeyDown("P")) {
-      print("space key was pressed");
+    if (Input.GetKeyDown(KeyCode.Z)) {
+      State._.isUISpellsOpen._ = !State._.isUISpellsOpen._;
     }
   }
 

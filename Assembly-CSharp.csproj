@@ -60,9 +60,9 @@
      <Compile Include="Assets\Scenes\WorldScene\TerrainController.cs" />
      <Compile Include="Assets\Scenes\WorldScene\UI\UISpellsController.cs" />
      <Compile Include="Assets\ShortcutsController.cs" />
-     <Compile Include="Assets\State\Booleans.cs" />
+     <Compile Include="Assets\State\ObservableBoolean.cs" />
+     <Compile Include="Assets\State\Observer.cs" />
      <Compile Include="Assets\State\State.cs" />
-     <Compile Include="Assets\State\StateSingleton.cs" />
      <None Include="Assets\ScriptTemplates\121-Unidux__State-State.cs.txt" />
      <None Include="Assets\ScriptTemplates\122-Unidux__Unidux-Unidux.cs.txt" />
      <None Include="Assets\ScriptTemplates\123-Unidux__StateElement-NewStateElement.cs.txt" />

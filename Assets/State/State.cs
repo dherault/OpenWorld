@@ -1,10 +1,6 @@
-﻿using System;
-using Unidux;
+﻿public class State {
+  // UI
+  public static State _ = new State();
 
-[Serializable]
-public class State : StateBase {
-
-  // Booleans
-  public bool IsSpellsUIOpened = false;
-
+  public ObservableBoolean isUISpellsOpen = new ObservableBoolean(false);
 }

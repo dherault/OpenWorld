@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UISpellsController : MonoBehaviour {
-    // Start is called before the first frame update
+public class UISpellsController : MonoBehaviour, Observer {
+
   void Start() {
-    gameObject.SetActive(false);
+    gameObject.SetActive(State._.isUISpellsOpen._);
+    State._.isUISpellsOpen.Subscribe(this);
   }
 
-  // Update is called once per frame
-  void Update() {
-
+  public void Update() {
+    if (gameObject.activeSelf != State._.isUISpellsOpen._) {
+      gameObject.SetActive(State._.isUISpellsOpen._);
+    }
   }
+
 }
