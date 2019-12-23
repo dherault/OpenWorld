@@ -622,10 +622,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 8af58e24-e21b-42de-a1c6-870ab09c0ced
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: OpenWorld
+  organizationId: dherault
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

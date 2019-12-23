@@ -54,10 +54,22 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Boot.cs" />
-     <Compile Include="Assets\CameraControler.cs" />
-     <Compile Include="Assets\CubeController.cs" />
-     <Compile Include="Assets\PlayerAvatarController.cs" />
-     <Compile Include="Assets\TerrainController.cs" />
+     <Compile Include="Assets\Scenes\WorldScene\CameraControler.cs" />
+     <Compile Include="Assets\Scenes\WorldScene\CubeController.cs" />
+     <Compile Include="Assets\Scenes\WorldScene\PlayerAvatarController.cs" />
+     <Compile Include="Assets\Scenes\WorldScene\TerrainController.cs" />
+     <Compile Include="Assets\Scenes\WorldScene\UI\UISpellsController.cs" />
+     <Compile Include="Assets\ShortcutsController.cs" />
+     <Compile Include="Assets\State\Booleans.cs" />
+     <Compile Include="Assets\State\State.cs" />
+     <Compile Include="Assets\State\StateSingleton.cs" />
+     <None Include="Assets\ScriptTemplates\121-Unidux__State-State.cs.txt" />
+     <None Include="Assets\ScriptTemplates\122-Unidux__Unidux-Unidux.cs.txt" />
+     <None Include="Assets\ScriptTemplates\123-Unidux__StateElement-NewStateElement.cs.txt" />
+     <None Include="Assets\ScriptTemplates\124-Unidux__Duck-NewDuck.cs.txt" />
+     <None Include="Assets\ScriptTemplates\127-Unidux__Middleware-NewMiddleware.cs.txt" />
+     <None Include="Assets\ScriptTemplates\125-Unidux__Action-NewAction.cs.txt" />
+     <None Include="Assets\ScriptTemplates\126-Unidux__Reducer-NewReducer.cs.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/Users/sven/dev/OpenWorld/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
@@ -631,6 +643,16 @@
  <Reference Include="mscorlib">
  <HintPath>/Applications/Unity/Hub/Editor/2018.4.14f1/Unity.app/Contents/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{E194239A-8E39-53F2-B01E-E8155B3D498A}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="UniRx.csproj">
+      <Project>{2113328F-6C75-90A3-6C58-2AB943D4182C}</Project>      <Name>UniRx</Name>    </ProjectReference>
+    <ProjectReference Include="UniRx.Async.csproj">
+      <Project>{20E5B8BE-605F-3132-6DCB-507E2B65AD0E}</Project>      <Name>UniRx.Async</Name>    </ProjectReference>
+    <ProjectReference Include="UniRx.Async.Editor.csproj">
+      <Project>{1BA85261-62D6-1AD7-BB72-95B4A2EBAF71}</Project>      <Name>UniRx.Async.Editor</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

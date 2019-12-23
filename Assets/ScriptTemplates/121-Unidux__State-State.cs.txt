@@ -1,0 +1,10 @@
+﻿using System;
+using Unidux;
+
+namespace App
+{
+    [Serializable]
+    public partial class #SCRIPTNAME# : StateBase
+    {
+    }
+}
