@@ -53,11 +53,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Boot.cs" />
+     <Compile Include="Assets\Scenes\WorldScene\Boot.cs" />
      <Compile Include="Assets\Scenes\WorldScene\CameraControler.cs" />
      <Compile Include="Assets\Scenes\WorldScene\CubeController.cs" />
      <Compile Include="Assets\Scenes\WorldScene\PlayerAvatarController.cs" />
      <Compile Include="Assets\Scenes\WorldScene\TerrainController.cs" />
+     <Compile Include="Assets\Scenes\WorldScene\UI\UIController.cs" />
+     <Compile Include="Assets\Scenes\WorldScene\UI\UIShortcutsController.cs" />
      <Compile Include="Assets\Scenes\WorldScene\UI\UISpellsController.cs" />
      <Compile Include="Assets\ShortcutsController.cs" />
      <Compile Include="Assets\State\ObservableBoolean.cs" />
