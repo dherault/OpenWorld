@@ -30,6 +30,12 @@ public class UIShortcutsController : MonoBehaviour, Observer {
 
     Image backgroundImage = backgroundImageGameObject.AddComponent<Image>();
     backgroundImage.color = new Color(255, 255, 255);
+
+    GameObject scrollViewPrefab = (GameObject)Resources.Load("Prefabs/UI/ScrollView", typeof(GameObject));
+    GameObject scrollViewGameObject = Instantiate(scrollViewPrefab, new Vector3(0, 0, 0), Quaternion.identity, backgroundImageGameObject.transform);
+
+    scrollViewGameObject.transform.localPosition = new Vector2(0, 0);
+    scrollViewGameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width * widthRatio, Screen.height * heightRatio * 0.75f);
   }
 
   void Start() {
