@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,7 +36,10 @@ public class UIShortcutsController : MonoBehaviour, Observer {
     GameObject scrollViewGameObject = Instantiate(scrollViewPrefab, new Vector3(0, 0, 0), Quaternion.identity, backgroundImageGameObject.transform);
 
     scrollViewGameObject.transform.localPosition = new Vector2(0, 0);
-    scrollViewGameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width * widthRatio, Screen.height * heightRatio * 0.75f);
+    scrollViewGameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(backgroundImageController.width * 0.4f, backgroundImageController.height * 0.2f);
+
+    // Debug.Log(KeyCode.Space is String);
+    // kc = (KeyCode)System.Enum.Parse(typeof(KeyCode), jsButton) ;
   }
 
   void Start() {
