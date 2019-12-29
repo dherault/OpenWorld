@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scenes\Old\OLD_TerrainController_old.cs" />
      <Compile Include="Assets\Scenes\WorldScene\Boot.cs" />
      <Compile Include="Assets\Scenes\WorldScene\CameraControler.cs" />
      <Compile Include="Assets\Scenes\WorldScene\CubeController.cs" />
@@ -66,8 +67,11 @@
      <Compile Include="Assets\State\ObservableBoolean.cs" />
      <Compile Include="Assets\State\ObservableInteger.cs" />
      <Compile Include="Assets\State\ObservableVector2.cs" />
+     <Compile Include="Assets\State\ObservableVector3.cs" />
      <Compile Include="Assets\State\Observer.cs" />
      <Compile Include="Assets\State\State.cs" />
+     <None Include="Assets\Free Low Poly Desert Pack\Materials\Shaders\Vertex_Color_Unlit.shader" />
+     <None Include="Assets\Free Low Poly Desert Pack\Materials\Shaders\Vertex_Color_Basic.shader" />
      <None Include="Assets\ScriptTemplates\121-Unidux__State-State.cs.txt" />
      <None Include="Assets\ScriptTemplates\122-Unidux__Unidux-Unidux.cs.txt" />
      <None Include="Assets\ScriptTemplates\123-Unidux__StateElement-NewStateElement.cs.txt" />

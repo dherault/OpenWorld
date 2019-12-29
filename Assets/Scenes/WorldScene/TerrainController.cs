@@ -1,85 +1,48 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TerrainController : MonoBehaviour {
 
-  public int widthInVexels = 100;
-  public int heightInVexels = 100;
-  public GameObject[,] cubes = new GameObject[100, 100];
-  private int numberOfElevations = 8;
+  public int xInVexels = 6;
+  public int zInVexels = 6;
+  public GameObject[,] cubes = new GameObject[6, 6];
 
-  void Awake() {
-    gameObject.GetComponent<Renderer>().enabled = false;
+  void Start() {
+    Vector3 size = gameObject.GetComponent<Renderer>().bounds.size;
+    float cubeX = size.x / xInVexels;
+    float cubeZ = size.z / zInVexels;
 
-    for (int x = 0; x < widthInVexels; x++) {
-      for (int z = 0; z < heightInVexels; z++) {
-        cubes[x, z] = CreateCube(x, 0, z);
+    for (int x = 0; x < xInVexels; x++) {
+      for (int z = 0; z < zInVexels; z++) {
+        cubes[x, z] = CreateCube(
+          gameObject.transform.position.x - size.x / 2 + (x + 0.5f) * cubeX,
+          gameObject.transform.position.y + 0.1f,
+          gameObject.transform.position.z - size.z / 2 + (z + 0.5f) * cubeZ,
+          cubeX,
+          0.05f,
+          cubeZ
+        );
       }
-    }
-
-    for (int i = 0; i < numberOfElevations; i++) {
-      int xCubeToElevate = (int)Math.Floor((decimal)UnityEngine.Random.Range(0, widthInVexels));
-      int zCubeToElevate = (int)Math.Floor((decimal)UnityEngine.Random.Range(0, heightInVexels));
-      int elevation = (int)Math.Floor((decimal)UnityEngine.Random.Range(1, 6));
-
-      UpdateCubeElevation(cubes, xCubeToElevate, zCubeToElevate, elevation);
     }
   }
 
-  GameObject CreateCube(int x, int y, int z) {
-    GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+  GameObject CreateCube(float x, float y, float z, float sizeX, float sizeY, float sizeZ) {
+    GameObject cubeGameObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
 
-    cube.AddComponent<CubeController>();
+    cubeGameObject.GetComponent<MeshRenderer>().enabled = false;
+    cubeGameObject.AddComponent<CubeController>();
 
-    CubeController cubeController = cube.GetComponent<CubeController>();
+    CubeController cubeController = cubeGameObject.GetComponent<CubeController>();
 
-    cubeController.x = x;
-    cubeController.y = y;
-    cubeController.z = z;
+    cubeGameObject.transform.position = new Vector3(x, y, z);
+    cubeGameObject.transform.localScale = new Vector3(sizeX, sizeY, sizeZ);
 
-    cube.transform.position = new Vector3(x, y, z);
-
-    var cubeRenderer = cube.GetComponent<Renderer>();
+    var cubeRenderer = cubeGameObject.GetComponent<Renderer>();
 
     cubeRenderer.material.color = Color.red;
 
-    return cube;
-  }
-
-  void ElevateNeighbouringCubes(GameObject[,] cubes, int x, int z, int elevation) {
-    if (elevation == 0 || x < 0 || z < 0 || x >= 100 || z >= 100) {
-      return;
-    }
-
-    if (x > 0) {
-      UpdateCubeElevation(cubes, x - 1, z, elevation);
-    }
-
-    if (x < widthInVexels - 1) {
-      UpdateCubeElevation(cubes, x + 1, z, elevation);
-    }
-
-    if (z > 0) {
-      UpdateCubeElevation(cubes, x, z - 1, elevation);
-    }
-
-    if (z < heightInVexels - 1) {
-      UpdateCubeElevation(cubes, x, z + 1, elevation);
-    }
-  }
-
-  void UpdateCubeElevation(GameObject[,] cubes, int x, int z, int elevation) {
-    GameObject cube = cubes[x, z];
-
-    if (cube.transform.position.y < elevation) {
-      CubeController cubeController = cube.GetComponent<CubeController>();
-
-      cubeController.updatePosition(cube.transform.position.x, elevation, cube.transform.position.z);
-
-      ElevateNeighbouringCubes(cubes, x, z, elevation - 1);
-    }
+    return cubeGameObject;
   }
 
 }

@@ -21,4 +21,7 @@ public class State {
     {"isUIShortcutsOpen", "Shortcuts"},
     {"isUISpellsOpen", "Spells"},
   };
+
+  // Avatar
+  public ObservableVector3 avatarPosition = new ObservableVector3(new Vector3(0, 0, 0));
 }

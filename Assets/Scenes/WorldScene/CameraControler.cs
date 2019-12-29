@@ -15,7 +15,7 @@ public class CameraControler : MonoBehaviour
   private float heightIncrement = 1;
 
   void Start() {
-    transform.position = new Vector3(50, goalHeight, 50);
+    transform.position = new Vector3(0, goalHeight, 0);
   }
 
   void Update () {
@@ -56,9 +56,9 @@ public class CameraControler : MonoBehaviour
     }
 
     transform.position =new Vector3(
-      Math.Min(100, Math.Max(0, transform.position.x)),
-      Math.Min(40, Math.Max(1, transform.position.y)),
-      Math.Min(100, Math.Max(0, transform.position.z))
+      Math.Min(15, Math.Max(-15, transform.position.x)),
+      Math.Min(30, Math.Max(1, transform.position.y)),
+      Math.Min(15, Math.Max(-15, transform.position.z))
     );
   }
 
