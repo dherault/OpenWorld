@@ -13,7 +13,12 @@ public class State {
   public ObservableVector2 UIShortcutsPosition = new ObservableVector2(new Vector2(0, 0));
 
   public Dictionary<string, string> shortcuts = new Dictionary<string, string>() {
-    {"isUIShortcutsOpen", "Slash"},
+    {"isUIShortcutsOpen", "Z"},
     {"isUISpellsOpen", "P"},
+  };
+
+  public Dictionary<string, string> shortcutNames = new Dictionary<string, string>() {
+    {"isUIShortcutsOpen", "Shortcuts"},
+    {"isUISpellsOpen", "Spells"},
   };
 }

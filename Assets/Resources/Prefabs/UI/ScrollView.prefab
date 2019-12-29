@@ -113,8 +113,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3499038588197004668}
   m_HandleRect: {fileID: 3499038588197004669}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.9916333
+  m_Value: 0.99999636
+  m_Size: 0.9443333
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -223,7 +223,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00002943664, y: 0.0000035762787}
+  m_AnchoredPosition: {x: -0.00002943664, y: 0.000033737015}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &3499038588551047385
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 3499038589494402354}
   - component: {fileID: 3499038589494402355}
   m_Layer: 5
-  m_Name: Scroll View
+  m_Name: ScrollView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,8 +386,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0014683, y: -0.001274}
-  m_SizeDelta: {x: 815.33, y: 297.49}
+  m_AnchoredPosition: {x: 0.0026245, y: -0.0036014}
+  m_SizeDelta: {x: 777.49, y: 283.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3499038589494402353
 MonoBehaviour:

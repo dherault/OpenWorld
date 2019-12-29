@@ -12,10 +12,6 @@ public class ShortcutsController : MonoBehaviour {
   }
 
   void Update() {
-    // if (Input.GetKeyDown(KeyCode.Z)) {
-    //   State._.isUIShortcutsOpen._ = !State._.isUIShortcutsOpen._;
-    // }
-
     foreach (KeyValuePair<string, string> item in State._.shortcuts) {
       KeyCode keyCode = (KeyCode)System.Enum.Parse(typeof(KeyCode), State._.shortcuts[item.Key]);
 
