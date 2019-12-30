@@ -49,9 +49,9 @@ public class ShortcutsController : MonoBehaviour {
     if (scrollFactor != 0) {
       print(scrollFactor);
       cameraOrbitTransform.localScale = new Vector3(
-        Math.Max(0.5f, Math.Min(2, cameraOrbitTransform.localScale.x * (1f - scrollFactor))),
-        Math.Max(0.5f, Math.Min(2, cameraOrbitTransform.localScale.y * (1f - scrollFactor))),
-        Math.Max(0.5f, Math.Min(2, cameraOrbitTransform.localScale.z * (1f - scrollFactor)))
+        Math.Max(2, Math.Min(12, cameraOrbitTransform.localScale.x * (1f - scrollFactor))),
+        Math.Max(2, Math.Min(12, cameraOrbitTransform.localScale.y * (1f - scrollFactor))),
+        Math.Max(2, Math.Min(12, cameraOrbitTransform.localScale.z * (1f - scrollFactor)))
       );
     }
   }
