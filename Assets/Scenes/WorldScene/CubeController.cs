@@ -11,7 +11,7 @@ public class CubeController : MonoBehaviour {
   }
 
   void OnMouseDown() {
-    State._.avatarPosition._ = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.6f, gameObject.transform.position.z);
+    State._.avatarPosition._ = gameObject.transform.position;
     rendered.enabled = false;
   }
 
