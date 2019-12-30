@@ -56,7 +56,7 @@
      <Compile Include="Assets\Scenes\Old\OLD_TerrainController_old.cs" />
      <Compile Include="Assets\Scenes\WorldScene\AvatarController.cs" />
      <Compile Include="Assets\Scenes\WorldScene\Boot.cs" />
-     <Compile Include="Assets\Scenes\WorldScene\CameraControler.cs" />
+     <Compile Include="Assets\Scenes\WorldScene\CameraController.cs" />
      <Compile Include="Assets\Scenes\WorldScene\CubeController.cs" />
      <Compile Include="Assets\Scenes\WorldScene\PathFinding.cs" />
      <Compile Include="Assets\Scenes\WorldScene\ShortcutsController.cs" />

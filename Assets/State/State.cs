@@ -24,4 +24,9 @@ public class State {
 
   // Avatar
   public ObservableVector3 avatarPosition = new ObservableVector3(new Vector3(0, 0, 0));
+
+  // Terrain
+  public int nTilesX = 3 * 6;
+  public int nTilesZ = 3 * 6;
+  public Vector3[,] tiles = new Vector3[3 * 6, 3 * 6];
 }

@@ -4,45 +4,39 @@ using UnityEngine;
 
 public class TerrainController : MonoBehaviour {
 
-  public int xInVexels = 6;
-  public int zInVexels = 6;
-  public GameObject[,] cubes = new GameObject[6, 6];
+  // void Start() {
+    // Vector3 size = gameObject.GetComponent<Renderer>().bounds.size;
+    // float cubeX = size.x / State._.nTilesX;
+    // float cubeZ = size.z / State._.nTilesZ;
 
-  void Start() {
-    Vector3 size = gameObject.GetComponent<Renderer>().bounds.size;
-    float cubeX = size.x / xInVexels;
-    float cubeZ = size.z / zInVexels;
+    // for (int x = 0; x < State._.nTilesX; x++) {
+    //   for (int z = 0; z < State._.nTilesZ; z++) {
+    //     Vector3 position = new Vector3(
+    //       -size.x / 2 + (x + 0.5f) * cubeX,
+    //       0.1f,
+    //       -size.z / 2 + (z + 0.5f) * cubeZ
+    //     );
 
-    for (int x = 0; x < xInVexels; x++) {
-      for (int z = 0; z < zInVexels; z++) {
-        cubes[x, z] = CreateCube(
-          gameObject.transform.position.x - size.x / 2 + (x + 0.5f) * cubeX,
-          gameObject.transform.position.y + 0.1f,
-          gameObject.transform.position.z - size.z / 2 + (z + 0.5f) * cubeZ,
-          cubeX,
-          0.05f,
-          cubeZ
-        );
-      }
-    }
-  }
+    //     State._.tiles[x, z] = position;
 
-  GameObject CreateCube(float x, float y, float z, float sizeX, float sizeY, float sizeZ) {
-    GameObject cubeGameObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
+    //     CreateCube(position, new Vector3(cubeX, 0.05f, cubeZ));
+    //   }
+    // }
+  // }
 
-    cubeGameObject.GetComponent<MeshRenderer>().enabled = false;
-    cubeGameObject.AddComponent<CubeController>();
+  // void CreateCube(Vector3 position, Vector3 scale) {
+  //   GameObject cubeGameObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
 
-    CubeController cubeController = cubeGameObject.GetComponent<CubeController>();
+  //   // cubeGameObject.GetComponent<MeshRenderer>().enabled = false;
+  //   cubeGameObject.AddComponent<CubeController>();
 
-    cubeGameObject.transform.position = new Vector3(x, y, z);
-    cubeGameObject.transform.localScale = new Vector3(sizeX, sizeY, sizeZ);
+  //   Renderer cubeRenderer = cubeGameObject.GetComponent<Renderer>();
+  //   CubeController cubeController = cubeGameObject.GetComponent<CubeController>();
 
-    var cubeRenderer = cubeGameObject.GetComponent<Renderer>();
-
-    cubeRenderer.material.color = Color.red;
-
-    return cubeGameObject;
-  }
+  //   cubeGameObject.transform.SetParent(gameObject.transform);
+  //   cubeGameObject.transform.localPosition = position;
+  //   cubeGameObject.transform.localScale = scale;
+  //   cubeRenderer.material.color = Color.red;
+  // }
 
 }
