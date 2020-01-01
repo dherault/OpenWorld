@@ -6,7 +6,7 @@ using UnityEngine;
 public class AvatarController : MonoBehaviour {
 
   public Transform cameraOrbitTransform;
-  private float movementPeriod = 0.1f;
+  public float movementPeriod = 0.2f;
   private double[,] rotationMatrix = new double[3, 3];
   private Animator animator;
   private RuntimeAnimatorController runRuntimeAnimatorController;
@@ -19,20 +19,27 @@ public class AvatarController : MonoBehaviour {
   }
   
   public void UpdatePosition(Vector3 velocity) {
+    float velocityNorm = (float)Math.Sqrt(velocity.x * velocity.x + velocity.y * velocity.y + velocity.z * velocity.z);
     
+    Vector3 normalizedVelocity = new Vector3(velocity.x / velocityNorm, velocity.y / velocityNorm, velocity.z / velocityNorm
+                                                                                                   );
     InitializeRotationMatrix();
 
+    double yRotation = cameraOrbitTransform.eulerAngles.y * Math.PI / 180;
+    
     rotationMatrix[1, 1] = 1;
-    rotationMatrix[0, 0] = Math.Cos(cameraOrbitTransform.eulerAngles.y * Math.PI / 180);
-    rotationMatrix[0, 2] = Math.Sin(cameraOrbitTransform.eulerAngles.y * Math.PI / 180);
-    rotationMatrix[2, 0] = -Math.Sin(cameraOrbitTransform.eulerAngles.y * Math.PI / 180);
-    rotationMatrix[2, 2] = Math.Cos(cameraOrbitTransform.eulerAngles.y * Math.PI / 180);
+    rotationMatrix[0, 0] = Math.Cos(yRotation);
+    rotationMatrix[0, 2] = Math.Sin(yRotation);
+    rotationMatrix[2, 0] = -Math.Sin(yRotation);
+    rotationMatrix[2, 2] = Math.Cos(yRotation);
 
-    Vector3 positionDelta = movementPeriod * MultiplyMatrixAndVector(rotationMatrix, velocity);
+    Vector3 positionDelta = movementPeriod * MultiplyMatrixAndVector(rotationMatrix, normalizedVelocity);
 
+    yRotation = (float)Math.Atan2(positionDelta.x, positionDelta.z) * 180 / Math.PI;
+    
     transform.position += positionDelta;
+    transform.eulerAngles = new Vector3(0, (float)yRotation, 0);
     cameraOrbitTransform.position += positionDelta;
-    transform.eulerAngles = new Vector3(0, cameraOrbitTransform.eulerAngles.y + 90, 0);
     animator.runtimeAnimatorController = runRuntimeAnimatorController;
   }
 

@@ -435,6 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraOrbitTransform: {fileID: 2135988230}
+  movementPeriod: 0.2
 --- !u!136 &336844274
 CapsuleCollider:
   m_ObjectHideFlags: 0
