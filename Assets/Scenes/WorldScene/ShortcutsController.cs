@@ -28,6 +28,9 @@ public class ShortcutsController : MonoBehaviour {
     if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0) {
       avatarController.UpdatePosition(new Vector3(Input.GetAxisRaw("Vertical"), 0, -Input.GetAxisRaw("Horizontal")));
     }
+    else {
+      avatarController.SetIdle();
+    }
 
     if (Input.GetMouseButton(1)) {
       float h = cameraRoationSpeed * Input.GetAxis("Mouse X");

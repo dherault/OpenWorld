@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/WorldScene/WorldScene.unity
+- path: Assets/_RPG Character Animation Pack FREE/Scenes/RPG-Character.unity
   isLoaded: 1
   isActive: 1

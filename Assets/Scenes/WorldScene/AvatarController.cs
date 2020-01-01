@@ -8,8 +8,18 @@ public class AvatarController : MonoBehaviour {
   public Transform cameraOrbitTransform;
   private float movementPeriod = 0.1f;
   private double[,] rotationMatrix = new double[3, 3];
+  private Animator animator;
+  private RuntimeAnimatorController runRuntimeAnimatorController;
+  private RuntimeAnimatorController idleRuntimeAnimatorController;
 
+  void Start() {
+    animator = gameObject.GetComponent<Animator>();
+    runRuntimeAnimatorController = Resources.Load("AnimationControllers/BasicMotions@Run") as RuntimeAnimatorController;
+    idleRuntimeAnimatorController = Resources.Load("AnimationControllers/BasicMotions@Idle") as RuntimeAnimatorController;
+  }
+  
   public void UpdatePosition(Vector3 velocity) {
+    
     InitializeRotationMatrix();
 
     rotationMatrix[1, 1] = 1;
@@ -22,6 +32,12 @@ public class AvatarController : MonoBehaviour {
 
     transform.position += positionDelta;
     cameraOrbitTransform.position += positionDelta;
+    transform.eulerAngles = new Vector3(0, cameraOrbitTransform.eulerAngles.y + 90, 0);
+    animator.runtimeAnimatorController = runRuntimeAnimatorController;
+  }
+
+  public void SetIdle() {
+    animator.runtimeAnimatorController = idleRuntimeAnimatorController;
   }
 
   void InitializeRotationMatrix() {
