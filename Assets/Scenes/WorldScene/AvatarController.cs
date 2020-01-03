@@ -6,60 +6,78 @@ using UnityEngine;
 public class AvatarController : MonoBehaviour {
 
   public Transform cameraOrbitTransform;
+  
+  [HideInInspector]
   public float movementPeriod = 0.2f;
-  private double[,] rotationMatrix = new double[3, 3];
-  private Animator animator;
-  private RuntimeAnimatorController runRuntimeAnimatorController;
-  private RuntimeAnimatorController idleRuntimeAnimatorController;
+  private float _iterationRunningFactor = 0.23f;
+  private float _rotationIteration = 12f;
+  private Vector3 _goalPosition;
+  private float _goalPositionThreshold = 0.23f / 2;
+  private float _goalRotationY;
+  private float _goalRotationYThreshold = 12f / 2;
+  
+  private Animator _animator;
+  private RuntimeAnimatorController _runRuntimeAnimatorController;
+  private RuntimeAnimatorController _idleRuntimeAnimatorController;
 
   void Start() {
-    animator = gameObject.GetComponent<Animator>();
-    runRuntimeAnimatorController = Resources.Load("AnimationControllers/BasicMotions@Run") as RuntimeAnimatorController;
-    idleRuntimeAnimatorController = Resources.Load("AnimationControllers/BasicMotions@Idle") as RuntimeAnimatorController;
-  }
-  
-  public void UpdatePosition(Vector3 velocity) {
-    float velocityNorm = (float)Math.Sqrt(velocity.x * velocity.x + velocity.y * velocity.y + velocity.z * velocity.z);
-    
-    Vector3 normalizedVelocity = new Vector3(velocity.x / velocityNorm, velocity.y / velocityNorm, velocity.z / velocityNorm
-                                                                                                   );
-    InitializeRotationMatrix();
-
-    double yRotation = cameraOrbitTransform.eulerAngles.y * Math.PI / 180;
-    
-    rotationMatrix[1, 1] = 1;
-    rotationMatrix[0, 0] = Math.Cos(yRotation);
-    rotationMatrix[0, 2] = Math.Sin(yRotation);
-    rotationMatrix[2, 0] = -Math.Sin(yRotation);
-    rotationMatrix[2, 2] = Math.Cos(yRotation);
-
-    Vector3 positionDelta = movementPeriod * MultiplyMatrixAndVector(rotationMatrix, normalizedVelocity);
-
-    yRotation = (float)Math.Atan2(positionDelta.x, positionDelta.z) * 180 / Math.PI;
-    
-    transform.position += positionDelta;
-    transform.eulerAngles = new Vector3(0, (float)yRotation, 0);
-    cameraOrbitTransform.position += positionDelta;
-    animator.runtimeAnimatorController = runRuntimeAnimatorController;
+    _goalPosition = State._.avatarPosition._;
+    _goalRotationY = State._.avatarRotationY._;
+    _animator = gameObject.GetComponent<Animator>();
+    _runRuntimeAnimatorController = Resources.Load("AnimationControllers/BasicMotions@Run") as RuntimeAnimatorController;
+    _idleRuntimeAnimatorController = Resources.Load("AnimationControllers/BasicMotions@Idle") as RuntimeAnimatorController;
   }
 
-  public void SetIdle() {
-    animator.runtimeAnimatorController = idleRuntimeAnimatorController;
-  }
+  void Update() {
+    Vector3 positionDiff = _goalPosition - State._.avatarPosition._;
+    float positionDiffNorm = Vector3.Magnitude(positionDiff);
+    float rotationYDiff = _goalRotationY - State._.avatarRotationY._;
+    
+    if (rotationYDiff > 180) {
+      rotationYDiff -= 360;
+    }
+    if (rotationYDiff < -180) {
+      rotationYDiff += 360;
+    }
+    
+    if (Mathf.Abs(rotationYDiff) > _goalRotationYThreshold) {
+      transform.eulerAngles += new Vector3(0, Mathf.Sign(rotationYDiff) * _rotationIteration, 0);
 
-  void InitializeRotationMatrix() {
-    for (int i = 0; i < 3; i++) {
-      for (int j = 0; j < 3; j++) {
-        rotationMatrix[i, j] = 0;
-      }
+      State._.avatarRotationY._ = transform.eulerAngles.y;
+    }
+    
+    if (positionDiffNorm > _goalPositionThreshold) {
+      SetRunning();
+
+      positionDiff = _iterationRunningFactor * positionDiff / positionDiffNorm;
+      
+      cameraOrbitTransform.position += positionDiff;
+      transform.position += positionDiff;
+
+      State._.avatarPosition._ = transform.position;
+    }
+    else {
+      SetIdle();
     }
   }
 
-  Vector3 MultiplyMatrixAndVector(double[,] m, Vector3 v) {
-    return new Vector3(
-      v.x * (float)m[0, 0] + v.y * (float)m[0, 1] + v.z * (float)m[0, 2],
-      v.x * (float)m[1, 0] + v.y * (float)m[1, 1] + v.z * (float)m[1, 2],
-      v.x * (float)m[2, 0] + v.y * (float)m[2, 1] + v.z * (float)m[2, 2]
-    );
+  public void UpdatePosition() {
+    
   }
+
+  public void GoToPosition(Vector3 position, float rotationY) {
+    _goalPosition = position;
+    _goalRotationY = rotationY;
+    // Debug.Log("goal"+rotationY);
+    // Debug.Log("current"+State._.avatarRotationY._);
+  }
+
+  private void SetRunning() {
+    _animator.runtimeAnimatorController = _runRuntimeAnimatorController;
+  }
+
+  private void SetIdle() {
+    _animator.runtimeAnimatorController = _idleRuntimeAnimatorController;
+  }
+  
 }
