@@ -44,7 +44,6 @@ public class AvatarController : MonoBehaviour {
     Vector3 positionDiff = State._.avatarPosition._ - transform.position;
     float positionDiffNorm = Vector3.Magnitude(positionDiff);
 
-    Debug.Log(positionDiffNorm);
     if (positionDiffNorm > iterationRunningMovementFactor / 2) {
       SetRunning();
 

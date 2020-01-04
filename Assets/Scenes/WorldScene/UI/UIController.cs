@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UIController {
   static public void CreateUI() {
+
     UIShortcutsController.CreateUI();
   }
 }

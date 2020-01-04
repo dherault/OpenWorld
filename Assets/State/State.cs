@@ -8,7 +8,7 @@ public class State {
 
   // Camera
   public ObservableVector3 cameraPosition = new ObservableVector3(Vector3.zero);
-  public ObservableVector3 cameraRotation = new ObservableVector3(new Vector3(0f, 0f, -0.1f));
+  public ObservableVector3 cameraRotation = new ObservableVector3(45 * Vector3.forward);
 
   // Terrain
   public int nTilesX = 3 * 6;
@@ -26,7 +26,7 @@ public class State {
     {"water", 0},
     {"fire", 0},
     {"ether", 0},
-    {"air", 0},
+    {"air", 10},
     {"plant", 0},
   });
   private static Spell[] spells = {
@@ -36,8 +36,8 @@ public class State {
   public ObservableArraySpell playerSpells = new ObservableArraySpell(spells);
 
   // UI
-  public ObservableBoolean isUISpellsOpen = new ObservableBoolean(false);
-  public ObservableVector2 UISpellsPosition = new ObservableVector2(new Vector2(0, 0));
+  public ObservableBoolean usUICharacteristicsOpen = new ObservableBoolean(false);
+  public ObservableVector2 UICharacteristicsPosition = new ObservableVector2(new Vector2(0, 0));
   public ObservableBoolean isUIShortcutsOpen = new ObservableBoolean(false);
   public ObservableVector2 UIShortcutsPosition = new ObservableVector2(new Vector2(0, 0));
 
