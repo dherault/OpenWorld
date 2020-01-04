@@ -7,17 +7,24 @@ using UnityEngine;
 
 public class ShortcutsController : MonoBehaviour {
 
+  public Transform avatarTransform;
   public Transform cameraOrbitTransform;
-  private AvatarController avatarController;
-
   public float cameraRotationSpeed = 12f;
-  private double[,] rotationMatrix = new double[3, 3];
-  
-  void Start() {
-    avatarController = GameObject.Find("Avatar").GetComponent<AvatarController>();
+
+  private AvatarController _avatarController;
+  private CameraController _cameraController;
+  private readonly float[,] rotationMatrix = new float[3, 3];
+  private float cameraRotationTopThreshold = 0.1f;
+
+  private void Start() {
+    _avatarController = GameObject.Find("Avatar").GetComponent<AvatarController>();
+    _cameraController = GameObject.Find("Camera").GetComponent<CameraController>();
+
+    InitializeRotationMatrix();
+    rotationMatrix[1, 1] = 1;
   }
 
-  void Update() {
+  private void Update() {
     foreach (KeyValuePair<string, string> item in State._.shortcuts) {
       KeyCode keyCode = (KeyCode)System.Enum.Parse(typeof(KeyCode), State._.shortcuts[item.Key]);
 
@@ -29,40 +36,44 @@ public class ShortcutsController : MonoBehaviour {
     if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0) {
       Vector3 velocity = new Vector3(Input.GetAxisRaw("Vertical"), 0, -Input.GetAxisRaw("Horizontal"));
       velocity = velocity /  Vector3.Magnitude(velocity);
-      
-      double yRotation = cameraOrbitTransform.eulerAngles.y * Math.PI / 180;
 
-      InitializeRotationMatrix();
-      rotationMatrix[1, 1] = 1;
-      rotationMatrix[0, 0] = Math.Cos(yRotation);
-      rotationMatrix[0, 2] = Math.Sin(yRotation);
-      rotationMatrix[2, 0] = -Math.Sin(yRotation);
-      rotationMatrix[2, 2] = Math.Cos(yRotation);
-      
-      avatarController.GoToPosition(
-        State._.avatarPosition._ + avatarController.movementPeriod * MultiplyMatrixAndVector(rotationMatrix,  velocity),
-        (cameraOrbitTransform.eulerAngles.y + 90 + Mathf.Atan2(-velocity.z, velocity.x) * 180 / (float)Math.PI) % 360
-      );
+      float yRotation = (float)(cameraOrbitTransform.eulerAngles.y * Math.PI) / 180;
+      float trigo = Mathf.Cos(yRotation);
+
+      rotationMatrix[0, 0] = trigo;
+      rotationMatrix[2, 2] = trigo;
+
+      trigo = Mathf.Sin(yRotation);
+
+      rotationMatrix[0, 2] = trigo;
+      rotationMatrix[2, 0] = -trigo;
+
+      if (_cameraController.isConstrainedToAvatar) {
+        State._.avatarPosition._ = avatarTransform.position + _avatarController.movementPeriod * MultiplyMatrixAndVector(rotationMatrix, velocity);
+        State._.avatarRotationY._ = (cameraOrbitTransform.eulerAngles.y + 90 + Mathf.Atan2(-velocity.z, velocity.x) * 180 / (float) Math.PI) % 360;
+      }
+      else {
+        State._.cameraPosition._ = cameraOrbitTransform.position + _cameraController.movementPeriod * MultiplyMatrixAndVector(rotationMatrix, velocity);
+      }
     }
 
     if (Input.GetMouseButton(1)) {
       float h = cameraRotationSpeed * Input.GetAxis("Mouse X");
       float v = cameraRotationSpeed * Input.GetAxis("Mouse Y");
 
-      if (cameraOrbitTransform.eulerAngles.z + v <= 0.1f || cameraOrbitTransform.eulerAngles.z + v >= 179.9f) {
-        v = 0;
-      }
+      // if (cameraOrbitTransform.eulerAngles.z + v <= cameraRotationTopThreshold || cameraOrbitTransform.eulerAngles.z + v >= 180 - cameraRotationTopThreshold) {
+      //   v = 0;
+      // }
 
-      cameraOrbitTransform.eulerAngles = new Vector3(
-        cameraOrbitTransform.eulerAngles.x,
-        cameraOrbitTransform.eulerAngles.y + h,
-        cameraOrbitTransform.eulerAngles.z + v
-      );
+      State._.cameraRotation._ += new Vector3(0, h, v);
+
+      Debug.Log(State._.cameraRotation._);
     }
 
     float scrollFactor = Input.GetAxis("Mouse ScrollWheel");
 
     if (scrollFactor != 0) {
+      // Todo use Math.Clamp
       cameraOrbitTransform.localScale = new Vector3(
         Math.Max(2, Math.Min(12, cameraOrbitTransform.localScale.x * (1f - scrollFactor))),
         Math.Max(2, Math.Min(12, cameraOrbitTransform.localScale.y * (1f - scrollFactor))),
@@ -70,7 +81,7 @@ public class ShortcutsController : MonoBehaviour {
       );
     }
   }
-  
+
   void InitializeRotationMatrix() {
     for (int i = 0; i < 3; i++) {
       for (int j = 0; j < 3; j++) {
@@ -79,11 +90,11 @@ public class ShortcutsController : MonoBehaviour {
     }
   }
 
-  Vector3 MultiplyMatrixAndVector(double[,] m, Vector3 v) {
+  Vector3 MultiplyMatrixAndVector(float[,] m, Vector3 v) {
     return new Vector3(
-      v.x * (float)m[0, 0] + v.y * (float)m[0, 1] + v.z * (float)m[0, 2],
-      v.x * (float)m[1, 0] + v.y * (float)m[1, 1] + v.z * (float)m[1, 2],
-      v.x * (float)m[2, 0] + v.y * (float)m[2, 1] + v.z * (float)m[2, 2]
+      v.x * m[0, 0] + v.y * m[0, 1] + v.z * m[0, 2],
+      v.x * m[1, 0] + v.y * m[1, 1] + v.z * m[1, 2],
+      v.x * m[2, 0] + v.y * m[2, 1] + v.z * m[2, 2]
     );
   }
 

@@ -4,26 +4,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
-  public Transform cameraOrbitTransform;
-  public Transform targetTransform;
-  private float targetPositionOffset = 1.75f;
 
-  void Start() {
-    cameraOrbitTransform.position = this.GetOffsetedTargetPosition();
+  public float movementPeriod = 0.2f;
+  public bool isConstrainedToAvatar = true;
+  public float positionIterationMovementFactor = 0.3f;
+
+  private void Start() {
+    transform.parent.transform.position = State._.cameraPosition._;
+    transform.parent.transform.eulerAngles = State._.cameraRotation._;
+    transform.eulerAngles = State._.cameraRotation._;
   }
 
-  void Update() {
-    transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 0);
+  private void Update() {
+    transform.parent.transform.eulerAngles = State._.cameraRotation._ ;
+    transform.eulerAngles = State._.cameraRotation._ ;
 
-    transform.LookAt(this.GetOffsetedTargetPosition());
-  }
+    Vector3 diff = State._.cameraPosition._ - transform.parent.transform.position;
+    float diffNorm = Vector3.Magnitude(diff);
 
-  Vector3 GetOffsetedTargetPosition() {
-    return new Vector3(
-      targetTransform.position.x,
-      targetTransform.position.y + targetPositionOffset,
-      targetTransform.position.z
-    );
+    if (diffNorm > positionIterationMovementFactor / 2) {
+      transform.parent.transform.position += positionIterationMovementFactor * diff / diffNorm;
+    }
+
+    transform.LookAt(transform.parent.transform.position);
   }
 
 }

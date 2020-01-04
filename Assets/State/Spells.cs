@@ -2,13 +2,13 @@
 public struct Spell {
   public string Name;
   public float Range;
-  public Element Element;
+  public Elements Element;
   public int MinDamage;
   public int MaxDamage;
   public int MinCriticalDamage;
   public int MaxCriticalDamage;
 
-  public Spell(string name, float range, Element element, int minDamage, int maxDamage, int minCriticalDamage, int maxCriticalDamage) {
+  public Spell(string name, float range, Elements element, int minDamage, int maxDamage, int minCriticalDamage, int maxCriticalDamage) {
     Name = name;
     Range = range;
     Element = element;
@@ -24,7 +24,7 @@ public class Spells {
   public static Spell SwordSlash = new Spell(
     "Sword Slash", 
     1f,
-    Element.None,
+    Elements.None,
     12,
     16,
     14,
@@ -34,7 +34,7 @@ public class Spells {
   public static Spell Thunder = new Spell(
     "Thunder",
     8f,
-    Element.Air,
+    Elements.Air,
     10,
     14,
     12,
