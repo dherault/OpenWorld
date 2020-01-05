@@ -52,19 +52,11 @@
             <e p="ShortcutsController.cs" t="Include" />
             <e p="StandbyEnnemyController.cs" t="Include" />
             <e p="UI" t="Include">
+              <e p="UiCharasteristicWindowController.cs" t="Include" />
               <e p="UIController.cs" t="Include" />
               <e p="UiWindowController.cs" t="Include" />
             </e>
           </e>
-        </e>
-        <e p="ScriptTemplates" t="Include">
-          <e p="121-Unidux__State-State.cs.txt" t="Include" />
-          <e p="122-Unidux__Unidux-Unidux.cs.txt" t="Include" />
-          <e p="123-Unidux__StateElement-NewStateElement.cs.txt" t="Include" />
-          <e p="124-Unidux__Duck-NewDuck.cs.txt" t="Include" />
-          <e p="125-Unidux__Action-NewAction.cs.txt" t="Include" />
-          <e p="126-Unidux__Reducer-NewReducer.cs.txt" t="Include" />
-          <e p="127-Unidux__Middleware-NewMiddleware.cs.txt" t="Include" />
         </e>
         <e p="State" t="Include">
           <e p="Elements.cs" t="Include" />

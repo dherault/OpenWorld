@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FighterStatisctics {
+public class FighterCharacteristics {
 
-  public readonly int actionPints;
-  public readonly float movementRange;
-  public readonly int vitality;
-  public readonly int earth;
-  public readonly int water;
-  public readonly int fire;
-  public readonly int plant;
-  public readonly int air;
-  public readonly int ether;
+  public int actionPints;
+  public float movementRange;
+  public int vitality;
+  public int earth;
+  public int water;
+  public int fire;
+  public int plant;
+  public int air;
+  public int ether;
   public int remainingPoints;
 
   public int initiative {
@@ -21,7 +21,9 @@ public class FighterStatisctics {
     }
   }
 
-  public FighterStatisctics(
+  private List<Observer> observers = new List<Observer>();
+
+  public FighterCharacteristics(
     int initialActionPoints,
     float initialMovementRange,
     int initialVitality,
@@ -43,6 +45,18 @@ public class FighterStatisctics {
     air = initialAir;
     ether = initialEther;
     remainingPoints = initialRemainingPoints;
+  }
+
+  public void Notify() {
+    observers.ForEach(x => x.Update());
+  }
+
+  public void Subscribe(Observer observer) {
+    observers.Add(observer);
+  }
+
+  public void Unsubscribe(Observer observer) {
+    observers.Remove(observer);
   }
 
 }

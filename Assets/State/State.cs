@@ -20,15 +20,7 @@ public class State {
   public ObservableFloat avatarRotationY = new ObservableFloat(0);
   public ObservableInt playerLevel = new ObservableInt(1);
   public ObservableInt playerExperience = new ObservableInt(0);
-  public ObservableDictionaryStringInt playerStatistics = new ObservableDictionaryStringInt(new Dictionary<string, int>() {
-    {"vitality", 100},
-    {"earth", 0},
-    {"water", 0},
-    {"fire", 0},
-    {"ether", 0},
-    {"air", 10},
-    {"plant", 0},
-  });
+  public FighterCharacteristics playerCharacterisitics = new FighterCharacteristics(6, 3, 100, 0, 0, 0, 0, 0, 0, 10);
   private static Spell[] spells = {
     Spells.SwordSlash,
     Spells.Thunder,
