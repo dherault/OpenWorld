@@ -36,18 +36,14 @@ public class State {
   public ObservableArraySpell playerSpells = new ObservableArraySpell(spells);
 
   // UI
-  public ObservableBoolean usUICharacteristicsOpen = new ObservableBoolean(false);
-  public ObservableVector2 UICharacteristicsPosition = new ObservableVector2(new Vector2(0, 0));
-  public ObservableBoolean isUIShortcutsOpen = new ObservableBoolean(false);
-  public ObservableVector2 UIShortcutsPosition = new ObservableVector2(new Vector2(0, 0));
+  public ObservableBoolean isUiCharacteristicsWindowOpen = new ObservableBoolean(false);
+  public ObservableVector2 UiCharacteristicsWindowPosition = new ObservableVector2(new Vector2(Screen.currentResolution.width / 3, Screen.currentResolution.height / 2));
 
   // Shortcuts
   public Dictionary<string, string> shortcuts = new Dictionary<string, string>() {
-    {"isUIShortcutsOpen", "Z"},
-    {"isUISpellsOpen", "P"},
+    {"isUiCharacteristicsWindowOpen", "C"},
   };
   public Dictionary<string, string> shortcutNames = new Dictionary<string, string>() {
-    {"isUIShortcutsOpen", "Shortcuts"},
-    {"isUISpellsOpen", "Spells"},
+    {"isUiCharacteristicsWindowOpen", "Characteristics"},
   };
 }

@@ -4,7 +4,7 @@ class Boot {
 
   [RuntimeInitializeOnLoadMethod]
   static void OnRuntimeMethodLoad() {
-    UIController.CreateUI();
+    UiController.CreateUI();
   }
 
 }

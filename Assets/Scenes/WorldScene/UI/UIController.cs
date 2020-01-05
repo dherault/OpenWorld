@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIController {
-  static public void CreateUI() {
+public class UiController {
 
-    UIShortcutsController.CreateUI();
+  static public void CreateUI() {
+    UiWindowController characteristicsWindowController = GameObject.Find("CharacteristicsWindow").AddComponent<UiWindowController>();
+
+    characteristicsWindowController.isOpen = State._.isUiCharacteristicsWindowOpen;
+    characteristicsWindowController.position = State._.UiCharacteristicsWindowPosition;
   }
+
 }
