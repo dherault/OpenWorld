@@ -5,25 +5,385 @@
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="_Free Low Poly Desert Pack" t="Include">
-          <e p="Materials" t="Include">
-            <e p="Shaders" t="Include">
-              <e p="Vertex_Color_Basic.shader" t="Include" />
-              <e p="Vertex_Color_Unlit.shader" t="Include" />
+        <e p="_Front" t="Include">
+          <e p="node_modules" t="Include">
+            <e p="@babel/parser" t="IncludeRecursive" />
+            <e p="@babel/types" t="IncludeRecursive" />
+            <e p="@jest/console" t="IncludeRecursive" />
+            <e p="@jest/core" t="IncludeRecursive" />
+            <e p="@jest/environment" t="IncludeRecursive" />
+            <e p="@jest/fake-timers" t="IncludeRecursive" />
+            <e p="@jest/reporters" t="IncludeRecursive" />
+            <e p="@jest/source-map" t="IncludeRecursive" />
+            <e p="@jest/test-result" t="IncludeRecursive" />
+            <e p="@jest/test-sequencer" t="IncludeRecursive" />
+            <e p="@jest/types" t="IncludeRecursive" />
+            <e p="@mrmlnc/readdir-enhanced" t="IncludeRecursive" />
+            <e p="@nodelib/fs.stat" t="IncludeRecursive" />
+            <e p="@testing-library/jest-dom" t="IncludeRecursive" />
+            <e p="@testing-library/react" t="IncludeRecursive" />
+            <e p="@testing-library/user-event" t="IncludeRecursive" />
+            <e p="@types" t="IncludeRecursive">
+              <e p="babel__generator" t="IncludeRecursive" />
+              <e p="babel__template" t="IncludeRecursive" />
+              <e p="babel__traverse" t="IncludeRecursive" />
+              <e p="events" t="IncludeRecursive" />
+              <e p="istanbul-lib-coverage" t="IncludeRecursive" />
+              <e p="istanbul-lib-report" t="IncludeRecursive" />
+              <e p="minimatch" t="IncludeRecursive" />
+              <e p="node" t="IncludeRecursive" />
+              <e p="prop-types" t="IncludeRecursive" />
+              <e p="react" t="IncludeRecursive" />
+              <e p="react-dom" t="IncludeRecursive" />
+              <e p="testing-library__dom" t="IncludeRecursive" />
+              <e p="yargs-parser" t="IncludeRecursive" />
             </e>
+            <e p="@typescript-eslint/experimental-utils" t="IncludeRecursive" />
+            <e p="@typescript-eslint/parser" t="IncludeRecursive" />
+            <e p="@typescript-eslint/typescript-estree" t="IncludeRecursive" />
+            <e p="@webassemblyjs" t="Include">
+              <e p="leb128" t="Include">
+                <e p="LICENSE.txt" t="Include" />
+              </e>
+            </e>
+            <e p="address" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="babel-jest" t="IncludeRecursive" />
+            <e p="chalk" t="IncludeRecursive" />
+            <e p="chokidar" t="IncludeRecursive" />
+            <e p="chrome-trace-event" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="cliui" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="css.escape" t="Include">
+              <e p="LICENSE-MIT.txt" t="Include" />
+            </e>
+            <e p="cssesc" t="Include">
+              <e p="LICENSE-MIT.txt" t="Include" />
+            </e>
+            <e p="cssom" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="cssstyle" t="Include">
+              <e p="MIT-LICENSE.txt" t="Include" />
+            </e>
+            <e p="csstype" t="IncludeRecursive" />
+            <e p="dashdash" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="data-urls" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="diff-sequences" t="IncludeRecursive" />
+            <e p="domexception" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="dotenv" t="IncludeRecursive" />
+            <e p="dotenv-expand" t="IncludeRecursive" />
+            <e p="emoji-regex" t="Include">
+              <e p="LICENSE-MIT.txt" t="Include" />
+            </e>
+            <e p="eslint" t="Include">
+              <e p="messages" t="Include">
+                <e p="all-files-ignored.txt" t="Include" />
+                <e p="extend-config-missing.txt" t="Include" />
+                <e p="failed-to-read-json.txt" t="Include" />
+                <e p="file-not-found.txt" t="Include" />
+                <e p="no-config-found.txt" t="Include" />
+                <e p="plugin-missing.txt" t="Include" />
+                <e p="print-config-with-directory-path.txt" t="Include" />
+                <e p="whitespace-found.txt" t="Include" />
+              </e>
+              <e p="node_modules" t="Include">
+                <e p="emoji-regex" t="Include">
+                  <e p="LICENSE-MIT.txt" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="esquery" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="exit" t="Include">
+              <e p="test" t="Include">
+                <e p="fixtures" t="Include">
+                  <e p="10-stderr.txt" t="Include" />
+                  <e p="10-stdout-stderr.txt" t="Include" />
+                  <e p="10-stdout.txt" t="Include" />
+                  <e p="100-stderr.txt" t="Include" />
+                  <e p="100-stdout-stderr.txt" t="Include" />
+                  <e p="100-stdout.txt" t="Include" />
+                  <e p="1000-stderr.txt" t="Include" />
+                  <e p="1000-stdout-stderr.txt" t="Include" />
+                  <e p="1000-stdout.txt" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="expect" t="IncludeRecursive" />
+            <e p="fast-glob" t="IncludeRecursive" />
+            <e p="fsevents" t="Include">
+              <e p="node_modules" t="Include">
+                <e p="mkdirp" t="Include">
+                  <e p="bin" t="Include">
+                    <e p="usage.txt" t="Include" />
+                  </e>
+                </e>
+                <e p="needle" t="Include">
+                  <e p="LICENSE.txt" t="Include" />
+                </e>
+                <e p="set-blocking" t="Include">
+                  <e p="LICENSE.txt" t="Include" />
+                </e>
+                <e p="signal-exit" t="Include">
+                  <e p="LICENSE.txt" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="he" t="Include">
+              <e p="LICENSE-MIT.txt" t="Include" />
+            </e>
+            <e p="html-encoding-sniffer" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="istanbul-reports" t="Include">
+              <e p="lib" t="Include">
+                <e p="html" t="Include">
+                  <e p="templates" t="Include">
+                    <e p="foot.txt" t="Include" />
+                    <e p="head.txt" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+            <e p="jest" t="IncludeRecursive" />
+            <e p="jest-changed-files" t="IncludeRecursive" />
+            <e p="jest-cli" t="IncludeRecursive" />
+            <e p="jest-config" t="IncludeRecursive" />
+            <e p="jest-diff" t="IncludeRecursive" />
+            <e p="jest-each" t="IncludeRecursive" />
+            <e p="jest-environment-jsdom" t="IncludeRecursive">
+              <e p="node_modules" t="Include">
+                <e p="jsdom" t="Include">
+                  <e p="LICENSE.txt" t="Include" />
+                </e>
+                <e p="whatwg-url" t="Include">
+                  <e p="LICENSE.txt" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="jest-environment-node" t="IncludeRecursive" />
+            <e p="jest-get-type" t="IncludeRecursive" />
+            <e p="jest-haste-map" t="IncludeRecursive" />
+            <e p="jest-jasmine2" t="IncludeRecursive" />
+            <e p="jest-leak-detector" t="IncludeRecursive" />
+            <e p="jest-message-util" t="IncludeRecursive" />
+            <e p="jest-mock" t="IncludeRecursive" />
+            <e p="jest-regex-util" t="IncludeRecursive" />
+            <e p="jest-resolve" t="IncludeRecursive" />
+            <e p="jest-resolve-dependencies" t="IncludeRecursive" />
+            <e p="jest-runner" t="IncludeRecursive" />
+            <e p="jest-runtime" t="IncludeRecursive" />
+            <e p="jest-serializer" t="IncludeRecursive" />
+            <e p="jest-snapshot" t="IncludeRecursive" />
+            <e p="jest-util" t="IncludeRecursive" />
+            <e p="jest-validate" t="IncludeRecursive" />
+            <e p="jest-worker" t="IncludeRecursive" />
+            <e p="jsdom" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="jsesc" t="Include">
+              <e p="LICENSE-MIT.txt" t="Include" />
+            </e>
+            <e p="json-schema" t="Include">
+              <e p="draft-zyp-json-schema-03.xml" t="Include" />
+              <e p="draft-zyp-json-schema-04.xml" t="Include" />
+            </e>
+            <e p="lodash._reinterpolate" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="lodash.template" t="Include" />
+            <e p="mkdirp" t="Include">
+              <e p="bin" t="Include">
+                <e p="usage.txt" t="Include" />
+              </e>
+            </e>
+            <e p="needle" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="node-libs-browser" t="Include">
+              <e p="node_modules" t="Include">
+                <e p="punycode" t="Include">
+                  <e p="LICENSE-MIT.txt" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="path-is-inside" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="performance-now" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="postcss-selector-parser" t="Include">
+              <e p="node_modules" t="Include">
+                <e p="cssesc" t="Include">
+                  <e p="LICENSE-MIT.txt" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="pretty-format" t="IncludeRecursive" />
+            <e p="punycode" t="Include">
+              <e p="LICENSE-MIT.txt" t="Include" />
+            </e>
+            <e p="react" t="IncludeRecursive" />
+            <e p="react-dom" t="IncludeRecursive" />
+            <e p="react-scripts" t="IncludeRecursive" />
+            <e p="realpath-native" t="IncludeRecursive" />
+            <e p="recursive-readdir" t="Include">
+              <e p="test" t="Include">
+                <e p="testdir" t="Include">
+                  <e p="c.txt" t="Include" />
+                  <e p="d.txt" t="Include" />
+                </e>
+                <e p="testdirBeta" t="Include">
+                  <e p="ignore.txt" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="regenerate" t="Include">
+              <e p="LICENSE-MIT.txt" t="Include" />
+            </e>
+            <e p="regenerate-unicode-properties" t="Include">
+              <e p="LICENSE-MIT.txt" t="Include" />
+            </e>
+            <e p="regexpu-core" t="Include">
+              <e p="LICENSE-MIT.txt" t="Include" />
+            </e>
+            <e p="regjsparser" t="Include">
+              <e p="node_modules" t="Include">
+                <e p="jsesc" t="Include">
+                  <e p="LICENSE-MIT.txt" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="request" t="Include">
+              <e p="node_modules" t="Include">
+                <e p="punycode" t="Include">
+                  <e p="LICENSE-MIT.txt" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="require-main-filename" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="rxjs" t="Include">
+              <e p="_esm2015" t="Include">
+                <e p="LICENSE.txt" t="Include" />
+              </e>
+              <e p="_esm5" t="Include">
+                <e p="LICENSE.txt" t="Include" />
+              </e>
+              <e p="LICENSE.txt" t="Include" />
+              <e p="src" t="Include">
+                <e p="LICENSE.txt" t="Include" />
+              </e>
+            </e>
+            <e p="set-blocking" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="setimmediate" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="signal-exit" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="source-map" t="IncludeRecursive" />
+            <e p="source-map-resolve" t="Include">
+              <e p="source-map-resolve.js.template" t="Include" />
+            </e>
+            <e p="stream-http" t="Include">
+              <e p="test" t="Include">
+                <e p="Server" t="Include">
+                  <e p="static" t="Include">
+                    <e p="basic.txt" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+            <e p="test-exclude" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="tslib" t="Include">
+              <e p="CopyrightNotice.txt" t="Include" />
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="unicode-canonical-property-names-ecmascript" t="Include">
+              <e p="LICENSE-MIT.txt" t="Include" />
+            </e>
+            <e p="unicode-match-property-ecmascript" t="Include">
+              <e p="LICENSE-MIT.txt" t="Include" />
+            </e>
+            <e p="unicode-match-property-value-ecmascript" t="Include">
+              <e p="LICENSE-MIT.txt" t="Include" />
+            </e>
+            <e p="unicode-property-aliases-ecmascript" t="Include">
+              <e p="LICENSE-MIT.txt" t="Include" />
+            </e>
+            <e p="upath" t="IncludeRecursive" />
+            <e p="url" t="Include">
+              <e p="node_modules" t="Include">
+                <e p="punycode" t="Include">
+                  <e p="LICENSE-MIT.txt" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="webpack-dev-server" t="Include">
+              <e p="node_modules" t="Include">
+                <e p="cliui" t="Include">
+                  <e p="LICENSE.txt" t="Include" />
+                </e>
+                <e p="require-main-filename" t="Include">
+                  <e p="LICENSE.txt" t="Include" />
+                </e>
+                <e p="yargs-parser" t="Include">
+                  <e p="LICENSE.txt" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="whatwg-encoding" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="whatwg-mimetype" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="whatwg-url" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="wordwrap" t="Include">
+              <e p="test" t="Include">
+                <e p="idleness.txt" t="Include" />
+              </e>
+            </e>
+            <e p="worker-farm" t="IncludeRecursive" />
+            <e p="xml-name-validator" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="yargs-parser" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+          </e>
+          <e p="public" t="Include">
+            <e p="robots.txt" t="Include" />
           </e>
         </e>
-        <e p="_QuickOutline" t="Include">
-          <e p="ReadMe.txt" t="Include" />
-          <e p="Resources" t="Include">
-            <e p="Shaders" t="Include">
-              <e p="OutlineFill.shader" t="Include" />
-              <e p="OutlineMask.shader" t="Include" />
-            </e>
+        <e p="_Server" t="Include">
+          <e p="Controllers" t="Include">
+            <e p="WeatherForecastController.cs" t="Include" />
           </e>
-          <e p="Scripts" t="Include">
-            <e p="Outline.cs" t="Include" />
-          </e>
+          <e p="Program.cs" t="Include" />
+          <e p="Startup.cs" t="Include" />
+          <e p="WeatherForecast.cs" t="Include" />
         </e>
         <e p="Old" t="Include">
           <e p="CubeController.cs" t="Include" />
@@ -143,85 +503,32 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
+        <e p="ThirdParty" t="Include">
+          <e p="_Free Low Poly Desert Pack" t="Include">
+            <e p="Materials" t="Include">
+              <e p="Shaders" t="Include">
+                <e p="Vertex_Color_Basic.shader" t="Include" />
+                <e p="Vertex_Color_Unlit.shader" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="_QuickOutline" t="Include">
+            <e p="ReadMe.txt" t="Include" />
+            <e p="Resources" t="Include">
+              <e p="Shaders" t="Include">
+                <e p="OutlineFill.shader" t="Include" />
+                <e p="OutlineMask.shader" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="Outline.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Utils" t="Include">
           <e p="Math3d.cs" t="Include" />
         </e>
       </e>
-      <e p="Front/node_modules/@babel/parser" t="IncludeRecursive" />
-      <e p="Front/node_modules/@babel/types" t="IncludeRecursive" />
-      <e p="Front/node_modules/@jest/console" t="IncludeRecursive" />
-      <e p="Front/node_modules/@jest/core" t="IncludeRecursive" />
-      <e p="Front/node_modules/@jest/environment" t="IncludeRecursive" />
-      <e p="Front/node_modules/@jest/fake-timers" t="IncludeRecursive" />
-      <e p="Front/node_modules/@jest/reporters" t="IncludeRecursive" />
-      <e p="Front/node_modules/@jest/source-map" t="IncludeRecursive" />
-      <e p="Front/node_modules/@jest/test-result" t="IncludeRecursive" />
-      <e p="Front/node_modules/@jest/test-sequencer" t="IncludeRecursive" />
-      <e p="Front/node_modules/@jest/types" t="IncludeRecursive" />
-      <e p="Front/node_modules/@mrmlnc/readdir-enhanced" t="IncludeRecursive" />
-      <e p="Front/node_modules/@nodelib/fs.stat" t="IncludeRecursive" />
-      <e p="Front/node_modules/@testing-library/jest-dom" t="IncludeRecursive" />
-      <e p="Front/node_modules/@testing-library/react" t="IncludeRecursive" />
-      <e p="Front/node_modules/@testing-library/user-event" t="IncludeRecursive" />
-      <e p="Front/node_modules/@types" t="IncludeRecursive">
-        <e p="babel__generator" t="IncludeRecursive" />
-        <e p="babel__template" t="IncludeRecursive" />
-        <e p="babel__traverse" t="IncludeRecursive" />
-        <e p="events" t="IncludeRecursive" />
-        <e p="istanbul-lib-coverage" t="IncludeRecursive" />
-        <e p="istanbul-lib-report" t="IncludeRecursive" />
-        <e p="minimatch" t="IncludeRecursive" />
-        <e p="node" t="IncludeRecursive" />
-        <e p="prop-types" t="IncludeRecursive" />
-        <e p="react" t="IncludeRecursive" />
-        <e p="react-dom" t="IncludeRecursive" />
-        <e p="testing-library__dom" t="IncludeRecursive" />
-        <e p="yargs-parser" t="IncludeRecursive" />
-      </e>
-      <e p="Front/node_modules/@typescript-eslint/experimental-utils" t="IncludeRecursive" />
-      <e p="Front/node_modules/@typescript-eslint/parser" t="IncludeRecursive" />
-      <e p="Front/node_modules/@typescript-eslint/typescript-estree" t="IncludeRecursive" />
-      <e p="Front/node_modules/babel-jest" t="IncludeRecursive" />
-      <e p="Front/node_modules/chalk" t="IncludeRecursive" />
-      <e p="Front/node_modules/chokidar" t="IncludeRecursive" />
-      <e p="Front/node_modules/csstype" t="IncludeRecursive" />
-      <e p="Front/node_modules/diff-sequences" t="IncludeRecursive" />
-      <e p="Front/node_modules/dotenv" t="IncludeRecursive" />
-      <e p="Front/node_modules/dotenv-expand" t="IncludeRecursive" />
-      <e p="Front/node_modules/expect" t="IncludeRecursive" />
-      <e p="Front/node_modules/fast-glob" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-changed-files" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-cli" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-config" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-diff" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-each" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-environment-jsdom" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-environment-node" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-get-type" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-haste-map" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-jasmine2" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-leak-detector" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-message-util" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-mock" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-regex-util" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-resolve" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-resolve-dependencies" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-runner" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-runtime" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-serializer" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-snapshot" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-util" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-validate" t="IncludeRecursive" />
-      <e p="Front/node_modules/jest-worker" t="IncludeRecursive" />
-      <e p="Front/node_modules/pretty-format" t="IncludeRecursive" />
-      <e p="Front/node_modules/react" t="IncludeRecursive" />
-      <e p="Front/node_modules/react-dom" t="IncludeRecursive" />
-      <e p="Front/node_modules/react-scripts" t="IncludeRecursive" />
-      <e p="Front/node_modules/realpath-native" t="IncludeRecursive" />
-      <e p="Front/node_modules/source-map" t="IncludeRecursive" />
-      <e p="Front/node_modules/upath" t="IncludeRecursive" />
-      <e p="Front/node_modules/worker-farm" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="OpenWorld.sln" t="IncludeFlat" />
       <e p="Packages" t="ExcludeRecursive" />

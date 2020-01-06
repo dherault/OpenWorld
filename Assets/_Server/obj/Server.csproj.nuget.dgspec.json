@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/sven/dev/OpenWorld/Server/Server.csproj": {}
+    "/Users/sven/dev/OpenWorld/Assets/_Server/Server.csproj": {}
   },
   "projects": {
-    "/Users/sven/dev/OpenWorld/Server/Server.csproj": {
+    "/Users/sven/dev/OpenWorld/Assets/_Server/Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/sven/dev/OpenWorld/Server/Server.csproj",
+        "projectUniqueName": "/Users/sven/dev/OpenWorld/Assets/_Server/Server.csproj",
         "projectName": "Server",
-        "projectPath": "/Users/sven/dev/OpenWorld/Server/Server.csproj",
+        "projectPath": "/Users/sven/dev/OpenWorld/Assets/_Server/Server.csproj",
         "packagesPath": "/Users/sven/.nuget/packages/",
-        "outputPath": "/Users/sven/dev/OpenWorld/Server/obj/",
+        "outputPath": "/Users/sven/dev/OpenWorld/Assets/_Server/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/sven/.nuget/NuGet/NuGet.Config"
