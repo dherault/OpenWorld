@@ -147,6 +147,81 @@
           <e p="Math3d.cs" t="Include" />
         </e>
       </e>
+      <e p="Front/node_modules/@babel/parser" t="IncludeRecursive" />
+      <e p="Front/node_modules/@babel/types" t="IncludeRecursive" />
+      <e p="Front/node_modules/@jest/console" t="IncludeRecursive" />
+      <e p="Front/node_modules/@jest/core" t="IncludeRecursive" />
+      <e p="Front/node_modules/@jest/environment" t="IncludeRecursive" />
+      <e p="Front/node_modules/@jest/fake-timers" t="IncludeRecursive" />
+      <e p="Front/node_modules/@jest/reporters" t="IncludeRecursive" />
+      <e p="Front/node_modules/@jest/source-map" t="IncludeRecursive" />
+      <e p="Front/node_modules/@jest/test-result" t="IncludeRecursive" />
+      <e p="Front/node_modules/@jest/test-sequencer" t="IncludeRecursive" />
+      <e p="Front/node_modules/@jest/types" t="IncludeRecursive" />
+      <e p="Front/node_modules/@mrmlnc/readdir-enhanced" t="IncludeRecursive" />
+      <e p="Front/node_modules/@nodelib/fs.stat" t="IncludeRecursive" />
+      <e p="Front/node_modules/@testing-library/jest-dom" t="IncludeRecursive" />
+      <e p="Front/node_modules/@testing-library/react" t="IncludeRecursive" />
+      <e p="Front/node_modules/@testing-library/user-event" t="IncludeRecursive" />
+      <e p="Front/node_modules/@types" t="IncludeRecursive">
+        <e p="babel__generator" t="IncludeRecursive" />
+        <e p="babel__template" t="IncludeRecursive" />
+        <e p="babel__traverse" t="IncludeRecursive" />
+        <e p="events" t="IncludeRecursive" />
+        <e p="istanbul-lib-coverage" t="IncludeRecursive" />
+        <e p="istanbul-lib-report" t="IncludeRecursive" />
+        <e p="minimatch" t="IncludeRecursive" />
+        <e p="node" t="IncludeRecursive" />
+        <e p="prop-types" t="IncludeRecursive" />
+        <e p="react" t="IncludeRecursive" />
+        <e p="react-dom" t="IncludeRecursive" />
+        <e p="testing-library__dom" t="IncludeRecursive" />
+        <e p="yargs-parser" t="IncludeRecursive" />
+      </e>
+      <e p="Front/node_modules/@typescript-eslint/experimental-utils" t="IncludeRecursive" />
+      <e p="Front/node_modules/@typescript-eslint/parser" t="IncludeRecursive" />
+      <e p="Front/node_modules/@typescript-eslint/typescript-estree" t="IncludeRecursive" />
+      <e p="Front/node_modules/babel-jest" t="IncludeRecursive" />
+      <e p="Front/node_modules/chalk" t="IncludeRecursive" />
+      <e p="Front/node_modules/chokidar" t="IncludeRecursive" />
+      <e p="Front/node_modules/csstype" t="IncludeRecursive" />
+      <e p="Front/node_modules/diff-sequences" t="IncludeRecursive" />
+      <e p="Front/node_modules/dotenv" t="IncludeRecursive" />
+      <e p="Front/node_modules/dotenv-expand" t="IncludeRecursive" />
+      <e p="Front/node_modules/expect" t="IncludeRecursive" />
+      <e p="Front/node_modules/fast-glob" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-changed-files" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-cli" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-config" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-diff" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-each" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-environment-jsdom" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-environment-node" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-get-type" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-haste-map" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-jasmine2" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-leak-detector" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-message-util" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-mock" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-regex-util" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-resolve" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-resolve-dependencies" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-runner" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-runtime" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-serializer" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-snapshot" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-util" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-validate" t="IncludeRecursive" />
+      <e p="Front/node_modules/jest-worker" t="IncludeRecursive" />
+      <e p="Front/node_modules/pretty-format" t="IncludeRecursive" />
+      <e p="Front/node_modules/react" t="IncludeRecursive" />
+      <e p="Front/node_modules/react-dom" t="IncludeRecursive" />
+      <e p="Front/node_modules/react-scripts" t="IncludeRecursive" />
+      <e p="Front/node_modules/realpath-native" t="IncludeRecursive" />
+      <e p="Front/node_modules/source-map" t="IncludeRecursive" />
+      <e p="Front/node_modules/upath" t="IncludeRecursive" />
+      <e p="Front/node_modules/worker-farm" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="OpenWorld.sln" t="IncludeFlat" />
       <e p="Packages" t="ExcludeRecursive" />

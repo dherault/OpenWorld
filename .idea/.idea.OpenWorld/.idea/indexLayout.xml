@@ -15,8 +15,10 @@
     <explicitExcludes>
       <Path>.git</Path>
       <Path>.idea</Path>
+      <Path>Front</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
+      <Path>Server</Path>
       <Path>Temp</Path>
       <Path>game.app</Path>
       <Path>obj</Path>
